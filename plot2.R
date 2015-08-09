@@ -16,6 +16,7 @@ reqddata <- subset(rawtable, (rawtable$Date=='1/2/2007') | (rawtable$Date == '2/
 rm("rawtable")
 
 #plot graph to .png file.
-png("plot2.png")
-with(reqddata,plot(Datetime,Global_active_power,type="l",ylab = "Global active power (kilowatts)"))
+
+with(reqddata,plot(Datetime,Global_active_power,type="l",xlab="",ylab = "Global active power (kilowatts)"))
+dev.copy(png,file="plot2.png")
 dev.off()

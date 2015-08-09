@@ -16,6 +16,7 @@ rm("rawtable")
 
 #plot histogram to .png file.
 
-png("plot1.png")
+
 hist(reqddata$Global_active_power,col="red",xlab="Global active power(kilowatts)", main="Global Active Power")
+dev.copy(png,file="plot1.png")
 dev.off()

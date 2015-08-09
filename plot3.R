@@ -15,8 +15,8 @@ reqddata <- subset(rawtable, (rawtable$Date=='1/2/2007') | (rawtable$Date == '2/
 rm("rawtable")
 
 
-#plot graph to .png file.
-png("plot3.png")
+#plot graph and then copy to .png file.
+
 with (reqddata, 
       {
         plot(Datetime,Sub_metering_1,type="l",col="black",xlab = "", ylab="Energy sub metering")
@@ -25,4 +25,5 @@ with (reqddata,
         legend("topright",lty=c(1,1),col= c("black", "red", "blue"),legend=c("sub_metering_1", "sub_metering_2", "submetering_3"))
       }
 )
+dev.copy(png,file="plot3.png")
 dev.off()
